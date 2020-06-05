@@ -61,6 +61,7 @@ export const ProfileArea = styled.div`
 
 export const Content = styled.div`
   max-width: 700px;
+  background-color: #40437E;
 `;
 
 export const UserInfos = styled.div`
@@ -74,6 +75,7 @@ export const UserInfos = styled.div`
     width: 100%;
     justify-content: space-between;
     padding: 0 70px;
+    height: 80px;
 
     div {
       display: flex;

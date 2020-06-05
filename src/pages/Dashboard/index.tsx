@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'react-day-picker/lib/style.css';
 
-import { FiCamera } from 'react-icons/fi';
 import {
   FaImage,
   FaPen,
