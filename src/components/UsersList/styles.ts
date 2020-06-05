@@ -13,13 +13,11 @@ export const Container = styled.div`
       padding-bottom: 2px;
       
       & + li {
-        margin-left: 10px;
+        margin-left: 5px;
       }
 
       img {
-        width: 120px;
-        height: 120px;
-      }
+        width: 100%;
     }
   }
 `;

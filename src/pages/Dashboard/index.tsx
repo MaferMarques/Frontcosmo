@@ -9,6 +9,8 @@ import {
   FaStickyNote,
   FaFile,
   FaUsers,
+  FaCommentAlt,
+  FaHeart
 } from 'react-icons/fa';
 
 import { RiBookMarkLine, RiLoginBoxLine } from 'react-icons/ri'
@@ -22,7 +24,16 @@ import UsersList from '../../components/UsersList';
 
 // import { Link } from 'react-router-dom';
 
-import { Container, Menu, ProfileArea, Content, UserInfos, } from './styles';
+import {
+  Container,
+  Menu,
+  ProfileArea,
+  Content,
+  UserInfos,
+  ButtonArea,
+  Feed,
+  PostImage,
+} from './styles';
 
 interface Post {
   id: string;
@@ -115,6 +126,88 @@ const Dashboard: React.FC = () => {
         </UserInfos>
 
         <UsersList />
+
+        <ButtonArea>
+          <button>
+            Enviar uma nova publicação
+          </button>
+        </ButtonArea>
+      
+        <Feed>
+          <ul>
+            <li>
+              <aside>
+                <img src="https://avatars0.githubusercontent.com/u/53975579?s=460&u=67d971f4db235ae4031471e693f8284fcabe2f6c&v=4" alt="username"/>
+              </aside>
+
+              <main>
+                <h3>andrecampll/admin</h3>
+                <PostImage>
+                  <img src="https://i.pinimg.com/originals/af/53/55/af5355d2e928deb428fd3961a317cca4.jpg" alt=""/>
+                </PostImage>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim vero ut excepturi reiciendis repudiandae distinctio vel praesentium quaerat neque, natus veniam. Illo nisi ducimus repellendus repudiandae iste, quae facilis rerum.</p>
+                
+                <footer>
+                  <div>
+                    <FaCommentAlt />
+                    <span>300</span>
+                  </div>
+                  <div>
+                    <FaHeart />
+                    <span>300</span>
+                  </div>
+                </footer>
+              </main>
+            </li>
+
+            <li>
+              <aside>
+                <img src="https://avatars0.githubusercontent.com/u/53975579?s=460&u=67d971f4db235ae4031471e693f8284fcabe2f6c&v=4" alt="username"/>
+              </aside>
+
+              <main>
+                <h3>andrecampll/admin</h3>
+                <PostImage>
+                  <img src="https://i.pinimg.com/originals/af/53/55/af5355d2e928deb428fd3961a317cca4.jpg" alt=""/>
+                </PostImage>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim vero ut excepturi reiciendis repudiandae distinctio vel praesentium quaerat neque, natus veniam. Illo nisi ducimus repellendus repudiandae iste, quae facilis rerum.</p>
+                
+                <footer>
+                  <div>
+                    <FaCommentAlt />
+                    <span>300</span>
+                  </div>
+                  <div>
+                    <FaHeart />
+                    <span>300</span>
+                  </div>
+                </footer>
+              </main>
+            </li>
+
+            <li>
+              <aside>
+                <img src="https://avatars0.githubusercontent.com/u/53975579?s=460&u=67d971f4db235ae4031471e693f8284fcabe2f6c&v=4" alt="username"/>
+              </aside>
+
+              <main>
+                <h3>andrecampll/admin</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim vero ut excepturi reiciendis repudiandae distinctio vel praesentium quaerat neque, natus veniam. Illo nisi ducimus repellendus repudiandae iste, quae facilis rerum.</p>
+                
+                <footer>
+                  <div>
+                    <FaCommentAlt />
+                    <span>300</span>
+                  </div>
+                  <div>
+                    <FaHeart />
+                    <span>300</span>
+                  </div>
+                </footer>
+              </main>
+            </li>
+          </ul>
+        </Feed>
       </Content>
     </Container>
   );
