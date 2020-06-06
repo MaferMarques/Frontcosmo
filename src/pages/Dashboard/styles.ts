@@ -139,6 +139,7 @@ export const Feed = styled.div`
     li {
       display: flex;
       padding: 10px 20px;
+      width: 100%;
 
       & + li {
         border-top: 2px solid #1B1751;
@@ -150,10 +151,13 @@ export const Feed = styled.div`
           width: 50px;
           height: 50px;
           border-radius: 50%;
+          background-color: #1B1751;
         }
       }
 
       main {
+        width: 100%;
+        margin-left: 10px;
         footer {
           display: flex;
           justify-content: flex-end;
