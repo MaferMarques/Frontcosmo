@@ -39,14 +39,14 @@ import {
 interface Post {
   id: string;
   content: string;
-  image?: string;
+  image_url?: string;
   likes: number;
   created_at: string;
   updated_at: string;
   user: {
     id: string;
     nickname: string;
-    avatar: string;
+    avatar_url: string;
   }
 }
 
@@ -55,13 +55,11 @@ const Dashboard: React.FC = () => {
   const { signOut, user } = useAuth();
   const token = localStorage.getItem('@Cosmo:token');
 
-
   useEffect(() => {
     api.get('posts').then(response => setPosts(response.data));
   }, [token])
 
   console.log(posts);
-  console.log(process.env.REACT_APP_API_URL);
 
   return (
     <Container>
@@ -146,8 +144,8 @@ const Dashboard: React.FC = () => {
             {posts.map(post => (
                 <li key={post.id} >
                 <aside>
-                  {post.user.avatar ?
-                  (<img src={`${process.env.REACT_APP_API_URL}/files/${post.user.avatar}`} alt={post.user.nickname} />)
+                  {post.user.avatar_url ?
+                  (<img src={post.user.avatar_url} alt={post.user.nickname} />)
                   :
                   (<FaUserCircle size={45} />)
                 }
@@ -155,9 +153,9 @@ const Dashboard: React.FC = () => {
   
                 <main>
                   <h3>{post.user.nickname} - admin</h3>
-                    {post.image && (
+                    {post.image_url && (
                       <PostImage>
-                        <img src={`${process.env.REACT_APP_API_URL}/files/${post.image}`} alt={`post from ${post.user.nickname}`} />
+                        <img src={post.image_url} alt={`post from ${post.user.nickname}`} />
                       </PostImage>
                     )}
                   <p>
