@@ -60,13 +60,16 @@ const Dashboard: React.FC = () => {
     api.get('posts').then(response => setPosts(response.data));
   }, [token])
 
+  console.log(posts);
+  console.log(process.env.REACT_APP_API_URL);
+
   return (
     <Container>
       <Menu>
         <div>
           <ProfileArea>
-            <img src="https://avatars0.githubusercontent.com/u/53975579?s=460&u=67d971f4db235ae4031471e693f8284fcabe2f6c&v=4" alt=""/>
-            <span>andrecampll</span>
+            <img src={user.avatar_url} alt={user.nickname} />
+            <span>{user.nickname}</span>
           </ProfileArea>
           <footer>
             <FaPen size={30} color="#CACBDB" />
@@ -119,8 +122,8 @@ const Dashboard: React.FC = () => {
             </div>
 
             <main>
-              <img src="https://avatars0.githubusercontent.com/u/53975579?s=460&u=67d971f4db235ae4031471e693f8284fcabe2f6c&v=4" alt="user"/>
-              <h1>andrecampll</h1>
+              <img src={user.avatar_url} alt={user.nickname} />
+              <h1>{user.nickname}</h1>
             </main>
 
             <div>
@@ -144,17 +147,17 @@ const Dashboard: React.FC = () => {
                 <li key={post.id} >
                 <aside>
                   {post.user.avatar ?
-                  (<img src={post.user.avatar} alt={post.user.nickname} />)
+                  (<img src={`${process.env.REACT_APP_API_URL}/files/${post.user.avatar}`} alt={post.user.nickname} />)
                   :
                   (<FaUserCircle size={45} />)
                 }
                 </aside>
   
                 <main>
-                  <h3>andrecampll - admin</h3>
+                  <h3>{post.user.nickname} - admin</h3>
                     {post.image && (
                       <PostImage>
-                        <img src={post.image} alt={`post from ${post.user.nickname}`} />
+                        <img src={`${process.env.REACT_APP_API_URL}/files/${post.image}`} alt={`post from ${post.user.nickname}`} />
                       </PostImage>
                     )}
                   <p>
